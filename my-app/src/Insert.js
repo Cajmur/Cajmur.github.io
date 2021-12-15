@@ -25,6 +25,7 @@ class Insert extends React.Component{
     }).then(console.log("O co chodzi?!")).catch(err=>{console.log(err)})  
   } 
   render(){ 
+    //Here's how to implement client-side uploading in React.js 
   return( 
     <div> 
       Pierwsza strona 

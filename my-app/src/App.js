@@ -1,4 +1,4 @@
-import * as React from 'react' 
+import * as React from 'react' //Iporting everyting from React library. "Import react from 'react'" doesn't work out of babel compiler 
 import Insert from './Insert' 
 import Login from './Login' 
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom' 
@@ -6,12 +6,12 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 class App extends React.Component{ 
   constructor(){ 
     super() 
-    this.state={ 
+    this.state={ //State is a global variable that you use when something on the site shoud be visually updated \. For example you could make a counter. :D 
       images: []  
     } 
   } 
   componentDidMount(){ 
-    fetch('http://localhost:5000/wyszukaj/', {mode: 'cors'}) 
+    fetch('http://localhost:5000/wyszukaj/', {mode: 'cors'}) //Fetching is downloading some data from API. What is API? If you have a database and created such server-links... This is the API! :D 
     .then(res=>res.json())  
     .then(res=>{ 
       const array=Object.values(res) 
@@ -22,7 +22,7 @@ class App extends React.Component{
     .catch(err=>{console.log(err)})  
   } 
   render(){ 
-    const array2=this.state.images.map((item, index)=>{ 
+    const array2=this.state.images.map((item, index)=>{ //Mapping :O 
       return(
         <div style={{textAlign: 'center'}}> 
           <img key={index} src={'http://localhost:5000/Images?images='+item} alt='' width='50%'/> 
